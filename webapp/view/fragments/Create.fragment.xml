@@ -1,0 +1,101 @@
+<c:FragmentDefinition
+	xmlns="sap.m"
+	xmlns:c="sap.ui.core"
+	xmlns:f="sap.ui.layout.form"
+>
+	<Dialog
+		id="createDialog"
+		type="Message"
+	>
+		<content>
+			<f:Form
+				id="form"
+				title=""
+				editable="true"
+				class="isReadonly"
+			>
+				<f:layout>
+					<f:ResponsiveGridLayout
+						labelSpanL="3"
+						labelSpanM="2"
+					/>
+				</f:layout>
+				<f:formContainers>
+					<f:FormContainer>
+						<f:formElements>
+							<f:FormElement label="{i18n>LabelEmployeeFirstName}">
+								<f:fields>
+									<Input
+										id="formEmployeeName"
+										showValueHelp="true"
+										valueHelpOnly="true"
+										valueHelpRequest=".openMatchcode"
+									/>
+								</f:fields>
+							</f:FormElement>
+							<f:FormElement label="{i18n>LabelEmployeeLastName}">
+								<f:fields>
+									<Input
+										id="formEmployeeLastName"
+										enabled="false"
+									/>
+								</f:fields>
+							</f:FormElement>
+							<f:FormElement label="{i18n>LabelShipCountry}">
+								<f:fields>
+									<Select id="formShipCountry"/>
+								</f:fields>
+							</f:FormElement>
+							<f:FormElement label="{i18n>LabelProduct}">
+								<f:fields>
+									<Input
+										id="formProduct"
+										showValueHelp="true"
+										valueHelpOnly="true"
+										valueHelpRequest=".openMatchcode"
+									/>
+								</f:fields>
+							</f:FormElement>
+							<f:FormElement label="{i18n>LabelUnitPrice}">
+								<f:fields>
+									<Input
+										id="formUnitPrice"
+										enabled="false"
+									/>
+								</f:fields>
+							</f:FormElement>
+							<f:FormElement label="{i18n>LabelQuantity}">
+								<f:fields>
+									<Input id="formQuantity"/>
+								</f:fields>
+							</f:FormElement>
+							<f:FormElement label="{i18n>LabelTotalPrice}">
+								<f:fields>
+									<Input
+										id="formTotalPrice"
+										enabled="false"
+										width="50%"
+									/>
+								</f:fields>
+							</f:FormElement>
+						</f:formElements>
+					</f:FormContainer>
+				</f:formContainers>
+			</f:Form>
+		</content>
+		<beginButton>
+			<Button
+				type="Emphasized"
+				text="{i18n>LabelCreate}"
+				press=".onCreate"
+			/>
+		</beginButton>
+		<endButton>
+			<Button
+				type="Transparent"
+				text="{i18n>LabelCancel}"
+				press=".onCloseCreateReport"
+			/>
+		</endButton>
+	</Dialog>
+</c:FragmentDefinition>

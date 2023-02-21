@@ -1,0 +1,38 @@
+{
+  "name": "sapui5.project.frontend",
+  "version": "0.0.1",
+  "private": true,
+  "description": "",
+  "dependencies": {
+    "@openui5/sap.f": "^1.84.27",
+    "@openui5/sap.m": "^1.84.27",
+    "@openui5/sap.tnt": "^1.84.27",
+    "@openui5/sap.ui.core": "^1.84.27",
+    "@openui5/sap.ui.layout": "^1.84.27",
+    "@openui5/themelib_sap_belize": "^1.84.27",
+    "@openui5/themelib_sap_fiori_3": "^1.84.27"
+  },
+  "devDependencies": {
+    "@ui5/cli": "^2.14.1",
+    "@sap/ux-ui5-tooling": "1",
+    "ui5-middleware-livereload": "^0.5.1"
+  },
+  "scripts": {
+    "start": "ui5 serve -o index.html",
+    "serve": "ui5 serve"
+  },
+  "ui5": {
+    "dependencies": [
+      "@sap/ux-ui5-tooling",
+      "@openui5/sap.f",
+      "@openui5/sap.m",
+      "@openui5/sap.tnt",
+      "@openui5/sap.ui.core",
+      "@openui5/sap.ui.layout",
+      "@openui5/themelib_sap_belize",
+      "@openui5/themelib_sap_fiori_3",
+      "ui5-middleware-livereload"
+    ]
+  },
+  "sapuxLayer": "CUSTOMER_BASE"
+}

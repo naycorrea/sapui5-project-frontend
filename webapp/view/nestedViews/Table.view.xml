@@ -1,0 +1,119 @@
+<mvc:View
+	controllerName=""
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns="sap.m"
+	displayBlock="true"
+>
+	<Table
+		id="tableId"
+		items="{
+			path: 'sales>/results'
+		}"
+		class="sapUiLargeMarginTop"
+		updateFinished="onUpdateFinished"
+	>
+		<headerToolbar>
+			<OverflowToolbar
+				style="Clear"
+				height="3rem"
+			>
+				<Title
+					id="TableTitle"
+					text="{i18n>TableTitle}"
+					level="H1"
+				/>
+				<ToolbarSpacer/>
+				<Button
+					id="idCreateReport"
+					text="{i18n>LabelCreateReport}"
+					icon="sap-icon://create"
+					type="Emphasized"
+					press=".openCreateForm"
+				/>
+			</OverflowToolbar>
+		</headerToolbar>
+		<columns>
+			<Column id="created">
+				<Text text="{i18n>LabelCreated}"/>
+			</Column>
+			<Column id="employee">
+				<Text text="{i18n>LabelEmployee}"/>
+			</Column>
+			<Column id="shipCountry">
+				<Text text="{i18n>LabelShipCountry}"/>
+			</Column>
+			<Column id="product">
+				<Text text="{i18n>LabelProduct}"/>
+			</Column>
+			<Column id="unitPrice">
+				<Text text="{i18n>LabelUnitPrice}"/>
+			</Column>
+			<Column id="quantity">
+				<Text text="{i18n>LabelQuantity}"/>
+			</Column>
+			<Column id="totalPrice">
+				<Text text="{i18n>LabelTotalPrice}"/>
+			</Column>
+			<Column id="edit">
+				<Text text="{i18n>LabelEdit}"/>
+			</Column>
+			<Column id="delete">
+				<Text text="{i18n>LabelDelete}"/>
+			</Column>
+		</columns>
+		<items>
+			<ColumnListItem
+				id="tableItemTemplate"
+				vAlign="Middle"
+			>
+				<Text text="{sales>dateCreated}"/>
+				<Text text="{sales>employeeFirstName} {sales>employeeLastName}"/>
+				<Text text="{sales>shipCountry}"/>
+				<Text text="{sales>productName}"/>
+				<Text text="$ {sales>unitPrice}"/>
+				<Text text="{sales>quantity}"/>
+				<Text text="$ {sales>totalPrice}"/>
+				<Button
+					text=""
+					icon="sap-icon://edit"
+					type="Transparent"
+					press=".editItem"
+				/>
+				<Button
+					text=""
+					icon="sap-icon://delete"
+					type="Transparent"
+					press=".deleteSale(${sales>_id})"
+				/>
+			</ColumnListItem>
+		</items>
+	</Table>
+	<Toolbar>
+		<ToolbarSpacer/>
+		<content>
+			<Button
+				id="prevButton"
+				enabled="false"
+				icon="sap-icon://navigation-left-arrow"
+				press=".goToPrevPage"
+			/>
+			<Input
+				id="pageInput"
+				value="{1}"
+				width="50px"
+				submit=".onUserChangePage"
+				tooltip="{i18n>TooltipPageInput}"
+			/>
+			<Text
+				id="totalPageId"
+				text="{i18n>LabelPageRange} 2"
+			/>
+			<Button
+				id="nextButton"
+				enabled="false"
+				icon="sap-icon://navigation-right-arrow"
+				press=".goToNextPage"
+			/>
+		</content>
+	</Toolbar>
+</mvc:View>

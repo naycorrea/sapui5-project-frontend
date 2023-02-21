@@ -1,0 +1,18 @@
+<mvc:View
+	controllerName="sapui5.project.frontend.controller.Home"
+	xmlns:mvc="sap.ui.core.mvc"
+	displayBlock="true"
+	xmlns="sap.m"
+>
+	<Shell appWidthLimited="false">
+		<Page
+			id="page"
+			title="{i18n>title}"
+		>
+			<content>
+				<mvc:XMLView viewName="sapui5.project.frontend.view.nestedViews.FilterBar"/>
+				<mvc:XMLView viewName="sapui5.project.frontend.view.nestedViews.Table"/>
+			</content>
+		</Page>
+	</Shell>
+</mvc:View>
