@@ -60,22 +60,22 @@ sap.ui.define(
       async init() {
         await this._initMockData("Matchcode");
 
-        const manifest = await ReaderJson.getJson(
-          `${originPath}/manifest.json`
-        );
-        const rootUri = manifest.envs.microserviceUrl + "/";
+        // const manifest = await ReaderJson.getJson(
+        //   `${originPath}/manifest.json`
+        // );
+        // const rootUri = manifest.envs.microserviceUrl + "/";
 
-        const mockServer = new MockServer({
-          rootUri,
-          requests: await getRequests(),
-        });
+        // const mockServer = new MockServer({
+        //   rootUri,
+        //   requests: await getRequests(),
+        // });
 
-        MockServer.config({
-          autoRespond: true,
-          autoRespondAfter: 300,
-        });
+        // MockServer.config({
+        //   autoRespond: true,
+        //   autoRespondAfter: 300,
+        // });
 
-        mockServer.start();
+        // mockServer.start();
       },
     };
   }

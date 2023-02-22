@@ -21,6 +21,13 @@ sap.ui.define(
         return this.getView().setModel(new JSONModel(data), modelName);
       },
 
+      updateModel(modelName, changes) {
+        const model = this.getModel(modelName);
+        const data = model.getData();
+
+        model.setData({ ...data, ...changes });
+      },
+
       getI18nText(key) {
         return this.getView().getModel("i18n").getResourceBundle().getText(key);
       },

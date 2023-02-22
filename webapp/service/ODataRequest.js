@@ -13,15 +13,19 @@ sap.ui.define(
           this._oView = oView;
         },
 
-        async getMatchcode() {
+        async getMatchcode(model, path) {
           const that = this._oView;
           const oView = that.getView();
 
-          const oModel = that.getModel("oDataMatchcodeModel");
+          const oModel = that.getModel(model);
 
-          oModel.read("/Products", {
-            success(odata) {
-              console.log(odata);
+          oModel.read(path, {
+            success(oData) {
+              let matchcode = new JSONModel(oData);
+
+              oView.setModel(matchcode);
+
+              return matchcode;
             },
             error(err) {
               console.log(err);

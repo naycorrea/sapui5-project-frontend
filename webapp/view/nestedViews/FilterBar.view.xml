@@ -62,7 +62,26 @@
 				visibleInFilterBar="true"
 			>
 				<filterbar:control>
-					<Select id="countryFilter"/>
+					<Select id="countryFilter">
+						<items>
+							<c:Item
+								key=""
+								text="{i18n>LabelAllOptions}"
+							/>
+							<c:Item
+								key="Brazil"
+								text="{i18n>LabelBrazil}"
+							/>
+							<c:Item
+								key="USA"
+								text="{i18n>LabelUSA}"
+							/>
+							<c:Item
+								key="Canada"
+								text="{i18n>LabelCanada}"
+							/>
+						</items>
+					</Select>
 				</filterbar:control>
 			</filterbar:FilterGroupItem>
 			<filterbar:FilterGroupItem

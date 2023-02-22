@@ -28,7 +28,7 @@
 					text="{i18n>LabelCreateReport}"
 					icon="sap-icon://create"
 					type="Emphasized"
-					press=".openEmployeeValueHelp"
+					press=".openForm('')"
 				/>
 			</OverflowToolbar>
 		</headerToolbar>
@@ -77,7 +77,7 @@
 					text=""
 					icon="sap-icon://edit"
 					type="Transparent"
-					press=".editItem"
+					press=".openForm(${sales>_id})"
 				/>
 				<Button
 					text=""
@@ -93,26 +93,17 @@
 		<content>
 			<Button
 				id="prevButton"
-				enabled="false"
 				icon="sap-icon://navigation-left-arrow"
-				press=".goToPrevPage"
-			/>
-			<Input
-				id="pageInput"
-				value="{1}"
-				width="50px"
-				submit=".onUserChangePage"
-				tooltip="{i18n>TooltipPageInput}"
+				press="changePage(-1)"
 			/>
 			<Text
 				id="totalPageId"
-				text="{i18n>LabelPageRange} 2"
+				text="{=${searchStatus>/currentPage} + 1} {i18n>LabelPageRange} {searchStatus>/totalPages}"
 			/>
 			<Button
 				id="nextButton"
-				enabled="false"
 				icon="sap-icon://navigation-right-arrow"
-				press=".goToNextPage"
+				press="changePage(1)"
 			/>
 		</content>
 	</Toolbar>

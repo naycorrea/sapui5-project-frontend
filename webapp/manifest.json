@@ -17,7 +17,7 @@
     },
     "dataSources": {
       "Matchcode": {
-        "uri": "/V2/Northwind/Northwind.svc",
+        "uri": "http://services.odata.org/Northwind/Northwind.svc/",
         "type": "OData",
         "settings": {
           "odataVersion": "2.0",

@@ -1,0 +1,157 @@
+<c:FragmentDefinition
+	xmlns="sap.m"
+	xmlns:c="sap.ui.core"
+	xmlns:f="sap.ui.layout.form"
+>
+	<Dialog
+		id="dialogId"
+		type="Message"
+		contentWidth="500px"
+	>
+		<content>
+			<f:Form
+				id="form"
+				title=""
+				editable="true"
+				class="isReadonly"
+			>
+				<f:layout>
+					<f:ResponsiveGridLayout
+						labelSpanL="3"
+						labelSpanM="2"
+					/>
+				</f:layout>
+				<f:formContainers>
+					<f:FormContainer>
+						<f:formElements>
+							<f:FormElement label="{i18n>LabelEmployeeFirstName}">
+								<f:fields>
+									<MultiInput
+										id="formEmployeeFirstName"
+										required="true"
+										showValueHelp="true"
+										valueHelpOnly="true"
+										value="{
+											path: 'sale>/employeeFirstName'
+										}"
+										valueHelpRequest=".openEmployeeValueHelp('formEmployeeFirstName')"
+										tokenChange=".populateInput('formEmployeeFirstName', 'formEmployeeLastName', 'Employees', 'LastName')"
+										suggestionItems="{
+											path: '/results',
+											sorter: {
+												path: 'FirstName'
+											}
+										}"
+									>
+										<c:Item
+											key="{EmployeeID}"
+											text="{FirstName}"
+										/>
+									</MultiInput>
+								</f:fields>
+							</f:FormElement>
+							<f:FormElement label="{i18n>LabelEmployeeLastName}">
+								<f:fields>
+									<Input
+										id="formEmployeeLastName"
+										enabled="false"
+										value="{
+											path: 'sale>/employeeLastName'
+										}"
+									/>
+								</f:fields>
+							</f:FormElement>
+							<f:FormElement label="{i18n>LabelShipCountry}">
+								<f:fields>
+									<Select
+										id="formShipCountry"
+										selectedKey="{
+											path: 'sale>/shipCountry'
+										}"
+									>
+										<items>
+											<c:Item
+												key="Brazil"
+												text="{i18n>LabelBrazil}"
+											/>
+											<c:Item
+												key="USA"
+												text="{i18n>LabelUSA}"
+											/>
+											<c:Item
+												key="Canada"
+												text="{i18n>LabelCanada}"
+											/>
+										</items>
+									</Select>
+								</f:fields>
+							</f:FormElement>
+							<f:FormElement label="{i18n>LabelProduct}">
+								<f:fields>
+									<MultiInput
+										id="formProduct"
+										required="true"
+										showValueHelp="true"
+										valueHelpOnly="true"
+										value="{
+											path: 'sale>/productName'
+										}"
+										valueHelpRequest=".openProductValueHelp('formProduct')"
+										tokenChange=".populateInput('formProduct', 'formUnitPrice', 'Products', 'UnitPrice')"
+										suggestionItems="{
+											path: '/results',
+											sorter: {
+												path: 'ProductName'
+											}
+										}"
+									>
+										<c:Item
+											key="{ProductID}"
+											text="{ProductName}"
+										/>
+									</MultiInput>
+								</f:fields>
+							</f:FormElement>
+							<f:FormElement label="{i18n>LabelUnitPrice}">
+								<f:fields>
+									<Input
+										id="formUnitPrice"
+										value="{
+											path: 'sale>/unitPrice'
+										}"
+										enabled="false"
+									/>
+								</f:fields>
+							</f:FormElement>
+							<f:FormElement label="{i18n>LabelQuantity}">
+								<f:fields>
+									<Input
+										id="formQuantity"
+										value="{
+											path: 'sale>/quantity'
+										}"
+										type="Number"
+									/>
+								</f:fields>
+							</f:FormElement>
+						</f:formElements>
+					</f:FormContainer>
+				</f:formContainers>
+			</f:Form>
+		</content>
+		<beginButton>
+			<Button
+				type="Emphasized"
+				text="{i18n>LabelCreate}"
+				press=".save"
+			/>
+		</beginButton>
+		<endButton>
+			<Button
+				type="Transparent"
+				text="{i18n>LabelCancel}"
+				press=".closeForm"
+			/>
+		</endButton>
+	</Dialog>
+</c:FragmentDefinition>

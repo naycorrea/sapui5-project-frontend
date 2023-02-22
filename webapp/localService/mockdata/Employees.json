@@ -1,0 +1,56 @@
+[
+  {
+    "EmployeeID": 1,
+    "LastName": "Davolio",
+    "FirstName": "Nancy",
+    "Title": "Sales Representative"
+  },
+  {
+    "EmployeeID": 2,
+    "LastName": "Fuller",
+    "FirstName": "Andrew",
+    "Title": "Vice President, Sales"
+  },
+  {
+    "EmployeeID": 3,
+    "LastName": "Leverling",
+    "FirstName": "Janet",
+    "Title": "Sales Representative"
+  },
+  {
+    "EmployeeID": 4,
+    "LastName": "Peacock",
+    "FirstName": "Margaret",
+    "Title": "Sales Representative"
+  },
+  {
+    "EmployeeID": 5,
+    "LastName": "Buchanan",
+    "FirstName": "Steven",
+    "Title": "Sales Manager"
+  },
+  {
+    "EmployeeID": 6,
+    "LastName": "Suyama",
+    "FirstName": "Michael",
+    "Title": "Sales Representative"
+  },
+  {
+    "EmployeeID": 7,
+    "LastName": "King",
+    "FirstName": "Robert",
+    "Title": "Sales Representative"
+  },
+  {
+    "EmployeeID": 8,
+    "LastName": "Callahan",
+    "FirstName": "Laura",
+    "Title": "Inside Sales Coordinator"
+  },
+  {
+    "EmployeeID": 9,
+    "LastName": "Dodsworth",
+    "FirstName": "Anne",
+    "Title": "Sales Representative"
+  }
+]
