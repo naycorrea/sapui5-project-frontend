@@ -1,5 +1,5 @@
 <mvc:View
-	controllerName=""
+	controllerName="sapui5.project.frontend.controller.Table"
 	xmlns:mvc="sap.ui.core.mvc"
 	xmlns="sap.m"
 	displayBlock="true"
@@ -28,7 +28,7 @@
 					text="{i18n>LabelCreateReport}"
 					icon="sap-icon://create"
 					type="Emphasized"
-					press=".openCreateForm"
+					press=".openEmployeeValueHelp"
 				/>
 			</OverflowToolbar>
 		</headerToolbar>

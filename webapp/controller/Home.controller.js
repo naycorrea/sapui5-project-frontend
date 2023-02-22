@@ -1,15 +1,21 @@
-sap.ui.define([
-    "sap/ui/core/mvc/Controller"
-],
-    /**
-     * @param {typeof sap.ui.core.mvc.Controller} Controller
-     */
-    function (Controller) {
-        "use strict";
+sap.ui.define(
+  [
+    "sapui5/project/frontend/controller/Base.controller",
+    "sapui5/project/frontend/service/ODataRequest",
+  ],
+  function (BaseController, ODataRequest) {
+    "use strict";
 
-        return Controller.extend("sapui5.project.frontend.controller.Home", {
-            onInit: function () {
+    return BaseController.extend("sapui5.project.frontend.controller.Home", {
+      onInit: function () {
+        this.oDataRequest = new ODataRequest(this);
+      },
 
-            }
-        });
+      async openEmployeeValueHelp() {
+        const modelData = await this.oDataRequest.getMatchcode();
+
+        console.log(modelData);
+      },
     });
+  }
+);

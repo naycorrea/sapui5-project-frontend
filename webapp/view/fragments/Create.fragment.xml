@@ -29,7 +29,7 @@
 										id="formEmployeeName"
 										showValueHelp="true"
 										valueHelpOnly="true"
-										valueHelpRequest=".openMatchcode"
+										valueHelpRequest=".openEmployeeValueHelp"
 									/>
 								</f:fields>
 							</f:FormElement>

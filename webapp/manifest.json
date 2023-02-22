@@ -14,6 +14,16 @@
       "id": "@sap/generator-fiori:basic",
       "version": "1.8.6",
       "toolsId": "ea4ffba4-c540-4be8-98ce-fcfa52eec86e"
+    },
+    "dataSources": {
+      "Matchcode": {
+        "uri": "/V2/Northwind/Northwind.svc",
+        "type": "OData",
+        "settings": {
+          "odataVersion": "2.0",
+          "localUri": "localService/metadata.xml"
+        }
+      }
     }
   },
   "sap.ui": {
@@ -57,6 +67,19 @@
         "settings": {
           "bundleName": "sapui5.project.frontend.i18n.i18n"
         }
+      },
+      "oDataMatchcodeModel": {
+        "dataSource": "Matchcode",
+        "settings": {
+          "metadataUrlParams": {
+            "sap-language": "EN"
+          },
+          "serviceUrlParams": {
+            "sap-language": "EN"
+          },
+          "withCredentials": true,
+          "useBatch": false
+        }
       }
     },
     "resources": {
@@ -79,10 +102,8 @@
       "routes": [
         {
           "name": "RouteHome",
-          "pattern": ":?query:",
-          "target": [
-            "TargetHome"
-          ]
+          "pattern": "",
+          "target": ["TargetHome"]
         }
       ],
       "targets": {
@@ -101,5 +122,12 @@
       "async": true,
       "id": "App"
     }
+  },
+  "envs": {
+    "microserviceUrl": "http://localhost:3000/sales",
+    "getAll": "getAll",
+    "create": "create",
+    "update": "update",
+    "delete": "delete"
   }
 }
