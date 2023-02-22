@@ -40,8 +40,7 @@ sap.ui.define(
           employeeId: sale.employeeId,
           employeeFirstName: sale.employeeFirstName,
           employeeLastName: sale.employeeLastName,
-          shipCountry:
-            sale.shipCountry === undefined ? "Brazil" : sale.shipCountry,
+          country: sale.country === undefined ? "Brazil" : sale.country,
           productId: sale.productId,
           productName: sale.productName,
           unitPrice: sale.unitPrice,

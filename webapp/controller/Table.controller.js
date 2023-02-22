@@ -42,7 +42,8 @@ sap.ui.define(
       async searchSales(page) {
         try {
           BusyIndicator.show(0);
-          const { Sales, Page, TotalPages } = await Request.getSales(page);
+          const { Sales, Page, TotalPages, TotalItems } =
+            await Request.getSales(page);
 
           Sales.map((item) => {
             item.dateCreated = `${formatter.dateLocaleFormat(
@@ -56,6 +57,7 @@ sap.ui.define(
           this.setModel(SEARCH_STATUS_MODEL, {
             currentPage: Page,
             totalPages: TotalPages,
+            totalItems: TotalItems,
           });
 
           this.enabledPaginationButtons(Page, TotalPages);

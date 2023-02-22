@@ -58,7 +58,7 @@
 				id="countryItem"
 				groupName="__$INTERNAL$"
 				name="country"
-				label="{i18n>LabelCreated}"
+				label="{i18n>LabelCountry}"
 				visibleInFilterBar="true"
 			>
 				<filterbar:control>

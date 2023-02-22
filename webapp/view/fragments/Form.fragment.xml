@@ -61,12 +61,12 @@
 									/>
 								</f:fields>
 							</f:FormElement>
-							<f:FormElement label="{i18n>LabelShipCountry}">
+							<f:FormElement label="{i18n>LabelCountry}">
 								<f:fields>
 									<Select
-										id="formShipCountry"
+										id="formCountry"
 										selectedKey="{
-											path: 'sale>/shipCountry'
+											path: 'sale>/country'
 										}"
 									>
 										<items>

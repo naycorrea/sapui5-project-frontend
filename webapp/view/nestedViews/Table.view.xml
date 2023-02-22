@@ -19,13 +19,13 @@
 			>
 				<Title
 					id="TableTitle"
-					text="{i18n>TableTitle}"
+					text="{i18n>TableTitle} ({searchStatus>/totalItems})"
 					level="H1"
 				/>
 				<ToolbarSpacer/>
 				<Button
 					id="idCreateReport"
-					text="{i18n>LabelCreateReport}"
+					text="{i18n>LabelCreateSale}"
 					icon="sap-icon://create"
 					type="Emphasized"
 					press=".openForm('')"
@@ -39,8 +39,8 @@
 			<Column id="employee">
 				<Text text="{i18n>LabelEmployee}"/>
 			</Column>
-			<Column id="shipCountry">
-				<Text text="{i18n>LabelShipCountry}"/>
+			<Column id="country">
+				<Text text="{i18n>LabelCountry}"/>
 			</Column>
 			<Column id="product">
 				<Text text="{i18n>LabelProduct}"/>
@@ -68,7 +68,7 @@
 			>
 				<Text text="{sales>dateCreated}"/>
 				<Text text="{sales>employeeFirstName} {sales>employeeLastName}"/>
-				<Text text="{sales>shipCountry}"/>
+				<Text text="{sales>country}"/>
 				<Text text="{sales>productName}"/>
 				<Text text="$ {sales>unitPrice}"/>
 				<Text text="{sales>quantity}"/>
